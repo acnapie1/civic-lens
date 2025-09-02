@@ -1,9 +1,56 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Abby Napier YOUR NAME */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-/* ///ADD/// CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 
 /* Root Variables */
@@ -38,15 +85,187 @@ body.dark-mode {
   cursor: pointer;
 }
 
-/* ///ADD/// Skip Link Styles */
+/*Skip Link*/
+.skipLink{
+  position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
 
-/* ///ADD/// Navigation Styles */
+/*Heading*/
+header{
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 4rem;
+}
+header h1{
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-left: 1rem;
+  padding-bottom: 15px;
+}
 
-/* ///ADD/// Global Layout Styles */
 
-/* ///ADD/// Global Text Styles */
+/*NAV small*/
+.menu-button {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 20px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;   
+  display: block;
+  width: 300px;
+  margin: 0 auto;   
+}
+
+.mobile-nav {
+  margin: 0 auto;   
+  display: block; 
+  text-align: center;
+  
+}
+
+.menu {
+  display: none; 
+  text-align: center;
+  background-color: var(--news-flash);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu li {
+  margin: 4px 0;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.menu a {
+  color: var(--watchdog-white);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 
 
+.menu a:hover {
+  background-color: var(--news-flash);
+}
+
+#menu-toggle:checked + .menu-button + .menu {
+  display: block;
+  margin: 0 auto;
+    width: 300px; 
+}
+
+
+.menu li:hover {
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+}
+
+
+/*Text Styles */
+p{
+  font-family: var(--font-body);
+  font-size: 20px;
+}
+h2{
+  font-family: var(--font-heading);
+  font-size: 2rem;
+}
+h3{
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+}
+.tagline{
+    margin-left: 1rem;
+   font-weight: bold;
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-family: var(--font-heading);
+}
+
+/* main styles*/
+body{
+  background-color: var(--watchdog-white);
+}
+main{
+  margin: 0 auto;
+  max-width: 95%;
+  padding: 2rem 0;
+  
+}
+#intro h2{
+  padding-bottom: 1rem;
+}
+#intro blockquote{
+  text-align: center;
+  padding-top: 1rem;
+}
+#intro p{
+  line-height: 1.5;
+}
+
+.breakingVid1, .breakingVid2{
+  background-color: var(--news-flash);
+  display: grid;
+  grid-template-columns: 1fr;
+  color: var(--watchdog-white);
+  max-width: 90%;
+  margin: 1rem auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-shadow: var(--shadow);
+}
+
+.breakingVid1 video, .breakingVid2 video {
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.breakingVid1 h3, .breakingVid2 h3{
+  border-bottom: 2px solid var(--watchdog-white);
+  margin: 15px;
+}
+
+.breakingVid1 p, .breakingVid2 p{
+  margin: 0 15px;
+}
+.articlesClass{
+  max-width: 90%;
+  display: grid;
+  margin: .5rem auto;
+}
+.art1, .art2, .art3, .art4, .art5, .art6, .art7, .art8
+, .art9, .art10, .art11, .art12{
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--truth-text);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+}
+
+.art1 h3, .art2 h3, .art3 h3, .art4 h3, .art5 h3, .art6 h3, .art7 h3, .art8 h3
+, .art9 h3, .art10 h3, .art11 h3, .art12 h3{
+  border-bottom: 2px solid var(--truth-text);
+  margin: 15px;
+}  
+
+.art1 p, .art2 p, .art3 p, .art4 p, .art5 p, .art6 p, .art7 p, .art8 p
+, .art9 p, .art10 p, .art11 p, .art12 p{
+  margin: 15px;
+  line-height: 1.2;
+}
 /* ///ADD/// medium styles 620px */
 
 
