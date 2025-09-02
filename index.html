@@ -30,10 +30,10 @@
         <input type="checkbox" id="menu-toggle" hidden>
         <label for="menu-toggle" class="menu-button">Menu</label>
         <ul class="menu">
-          <li><a href="#breaking-news">Breaking News</a></li>
-          <li><a href="#featured-aticles">Featured Articles</a></li>
-          <li><a href="#alerts">Alerts</a></li>
-          <li><a href="#social">Social</a></li>
+          <li><a href="#breakingNews">Breaking News</a></li>
+          <li><a href="#aticles">Featured Articles</a></li>
+          <li><a href="#contact">Alerts</a></li>
+          <li><a href="#footerGrid">Social</a></li>
         </ul>
       </nav>
     </header>
@@ -136,69 +136,68 @@
       <h2>Stay Informed. Stay Empowered.</h2>
        <p> Receive text messages with the news you want to know.</p>
         <form action="https://wp.zybooks.com/form-viewer.php" method="get">
-          <label for="name">Name<span class="required">*</span></label>
-	        <input id="name" type="text" autocomplete="name" required>
-          
-          <label for="mobile">Mobile<span class="required">*</span></label>
-	        <input id="mobile" type="tel" autocomplete="tel" required>
-       
+          <div class="topForm">
+            <div class="formGroup">
+              <label for="name">Name</label>
+              <input id="name" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="formGroup">
+              <label for="mobile">Mobile</label>
+              <input id="mobile" type="tel" autocomplete="tel" required>
+            </div>
+          </div>
           <fieldset>
                 <legend> Notification Preferences</legend>
 
                 <div>
-                  <input type="checkbox" id="brNews" name="brNews">
-                  <label for="brNews"> Breaking News</label>
+                  <label for="brNews"> <input type="checkbox" id="brNews" name="brNews">Breaking News</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" id="politics" name="politics">
-                  <label for="politics">Politics</label>
+                  <label for="politics"><input type="checkbox" id="politics" name="politics">Politics</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" id="weather" name="weather">
-                  <label for="weather">Weather</label>
+                  <label for="weather"><input type="checkbox" id="weather" name="weather">Weather</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" id="sports" name="sports">
-                  <label for="sports">Sports</label>
+                 
+                  <label for="sports"><input type="checkbox" id="sports" name="sports">Sports</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" id="entertainment" name="entertainment">
-                  <label for="entertainment">Entertainment</label>
+                  <label for="entertainment"><input type="checkbox" id="entertainment" name="entertainment">Entertainment</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" id="world" name="world">
-                  <label for="world">World</label>
+                 
+                  <label for="world"> <input type="checkbox" id="world" name="world">World</label>
                 </div>
 
                 <div>
-                  <input type="checkbox" id="financial" name="financial">
-                  <label for="financial">Financial</label>
+                  <label for="financial">  <input type="checkbox" id="financial" name="financial">Financial</label>
                 </div>
             </fieldset>
-             <button type="submit" formmethod="post" id="submit">Submit</button>
+             <button type="submit" formmethod="post" id="submit">Subscribe</button>
        
         </form>
       </section>
      </main>
       <footer>
         <h2>Follow Us</h2>
-        <ul>
-          <li><a href="#">Twitter/X</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">YouTube</a></li>
-          <li><a href="#">TikTok</a></li>
-          <li><a href="#">LinkedIn</a></li>
-      </ul>
+          <div class="footerGrid">
+            <div class="footer1"><a href="#">Twitter/X</a></div>
+            <div class="footer2"><a href="#">Instagram</a></div>
+            <div class="footer3"><a href="#">YouTube</a></div>
+            <div class="footer4"><a href="#">TikTok</a></div>
+            <div class="footer5"><a href="#">LinkedIn</a></div>
+          </div>
    
         <p>&copy; 2025 Civic Lens. All rights reserved.</p>
     </footer>  
-        
-  <script>
+         <script>
     const toggleButton = document.getElementById('theme-toggle');
   
     toggleButton.addEventListener('click', () => {
