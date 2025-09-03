@@ -75,18 +75,30 @@ body.dark-mode {
   background-color: var(--truth-text);
   color: var(--watchdog-white);
 }
+button#theme-toggle,
 #theme-toggle {
   position: absolute;
-  top: .5rem;
-  right: .5rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 70px;
+  height: 70px;
+  min-width: 70px;  
+  max-width: 70px; 
+  border-radius: 50%;
   background-color: var(--watchdog-white);
   border: 1px solid var(--blue-bulletin);
   cursor: pointer;
-   width: 70px;
-   height: 70px;
-   border-radius: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  flex: 0 0 auto;        
+  appearance: none;
+  -webkit-appearance: none;
+  z-index: 1;
 }
-
 /*Skip Link*/
 .skipLink{
   position: absolute;
@@ -119,33 +131,38 @@ header h1{
   font-size: 20px;
   border: none;
   cursor: pointer;
-  text-align: center;   
+  text-align: center;
   display: block;
   width: 300px;
-  margin: 0 auto;   
+  margin: 0 auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .mobile-nav {
-  margin: 0 auto;   
-  display: block; 
+  margin: 0 auto;
+  display: block;
   text-align: center;
-  
 }
 
+/* -------------------------------
+   MENU ITEMS
+---------------------------------*/
 .menu {
   display: none; 
   text-align: center;
   background-color: var(--news-flash);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
   z-index: 1;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   list-style: none;
+  width: 300px;
 }
 
 .menu li {
   margin: 4px 0;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border 0.3s ease;
 }
 
 .menu a {
@@ -154,24 +171,20 @@ header h1{
   text-decoration: none;
   display: block;
 }
-
-
-.menu a:hover {
-  background-color: var(--news-flash);
+#menu-toggle:checked + .menu-button {
+  background-color: var(--blue-bulletin); 
+  border: 2px solid var(--news-flash);                 
+  color: var(--watchdog-white);           
 }
-
-#menu-toggle:checked + .menu-button + .menu {
-  display: block;
-  margin: 0 auto;
-    width: 300px; 
-}
-
 
 .menu li:hover {
-  box-shadow: var(--shadow);
-  border-radius: 4px;
+  background-color: var(--blue-bulletin); 
+  border: 2px solid var(--news-flash);                  
 }
 
+.menu li:hover a {
+  color: var(--watchdog-white);
+}
 
 /*Text Styles */
 p{
@@ -226,7 +239,10 @@ main{
   word-break: break-word;
   box-shadow: var(--shadow);
 }
-
+.breakingVid1:hover, .breakingVid2:hover{
+  transform: scale(1.01);
+   transition: transform 0.5s ease;
+}
 .breakingVid1 video, .breakingVid2 video {
   width: 90%;
   height: auto;
@@ -262,18 +278,30 @@ main{
   border-bottom: 2px solid var(--truth-text);
   margin: 15px;
 }  
-
+body.dark-mode .articlesClass h3 {
+  border-bottom: 2px solid var(--blue-bulletin);
+  margin: 15px;
+}
+body.dark-mode .articlesClass{
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--blue-bulletin);
+}
 .art1 p, .art2 p, .art3 p, .art4 p, .art5 p, .art6 p, .art7 p, .art8 p
 , .art9 p, .art10 p, .art11 p, .art12 p{
   margin: 15px;
   line-height: 1.2;
 }
 
+.art1:hover, .art2:hover, .art3:hover, .art4:hover, .art5:hover, .art6:hover, .art7:hover, .art8:hover
+, .art9:hover, .art10:hover, .art11:hover, .art12:hover{
+  transform: scale(1.01);
+   transition: transform 0.5s ease;
+}
 #contact h2{
 margin-bottom: 10px;
 }
-
-form{
+form {
   background-color: var(--news-flash);
   color: var(--watchdog-white);
   padding: 10px;
@@ -281,18 +309,25 @@ form{
   font-family: var(--font-body);
   font-size: 20px;
   box-shadow: var(--shadow);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 500px; 
 }
 
-#name, #mobile, fieldset{
-width: 25rem;
-margin: 0 auto;
+.topForm {
+  display: flex;
+  flex-direction: column; 
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .formGroup {
-  width: 25rem;
-  margin: 1rem auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+  margin-bottom: 1rem;
+  width: 100%; 
 }
 
 .formGroup label {
@@ -301,16 +336,29 @@ margin: 0 auto;
   text-align: left;
 }
 
-fieldset{
+.formGroup input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+
+fieldset {
   border: 1px solid var(--truth-text);
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-fieldset legend{
+fieldset legend {
   margin: 5px;
+  font-weight: bold;
 }
 
-button{
-  width: 20rem;
+
+button {
+  width: 100%;
+  max-width: 20rem;
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
   display: block;
@@ -318,36 +366,211 @@ button{
   padding: 15px;
   font-size: 22px;
   box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
+button:hover {
+  background-color: var(--watchdog-white);
+  color: var(--blue-bulletin);
+  border: 1px solid var(--blue-bulletin);
+}
 footer{
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
+   min-height: 15rem;   
+  padding: 2rem; 
+   display: flex;           
+  flex-direction: column;  
+  justify-content: space-between; 
+  align-items: flex-start; 
+}
+
+footer a{
+  text-decoration: none;
+  color: var(--watchdog-white);
+  background-color: var(--news-flash);
+  padding: 10px;
+  display: inline-block;
+}
+
+footer a:hover{
+  background-color: var(--blue-bulletin);
+  border: 1px solid var(--news-flash);
+}
+.footerGrid{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(2, auto);
+  row-gap: 1rem;
+  column-gap: 1rem;
+  width: max-content;
+}
+
+footer p{
+ text-align: center;
+  margin: 0;
+  align-self: center; 
+
+}
+input[type="checkbox"]{
+  width: 20px;  
+  height: 20px;
+}
+input[type="checkbox"]:checked {
+  accent-color: var(--blue-bulletin);
 }
 /* ///ADD/// medium styles 620px */
+@media only screen and (min-width: 620px) {
+  form {
+    max-width: 70%;
+  }
 
-/* larger styles form {
   .topForm {
-    display: flex;         
-    gap: 1rem;             
+    flex-direction: row; 
+    gap: 2rem;
   }
 
   .formGroup {
-    flex: 1;              
-    margin-bottom: 0;      
+    flex: 1;           
+    margin: 0;          
+    width: auto;        
   }
-}
-  */
-/* ///ADD/// large styles 920px */
 
+  .formGroup label,
+  .formGroup input {
+    width: 100%; 
+  }
+
+  fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1rem;
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  .newsVids{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .articlesClass{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .footerGrid{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    float: left;
+    gap: 20px;
+  }
+.menu-button{
+  display: none;
+}
+.menu{
+  display: grid; grid-template-rows: 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  width: fit-content; column-gap: 20px; 
+  background-color: transparent; 
+  box-shadow: none;
+  margin: 0;
+  text-align: left;
+}
+.menu li{
+  background-color: var(--news-flash);
+
+ 
+}
+button{
+  min-width: 25rem;
+}
+
+
+
+}
+
+/* ///ADD/// large styles 920px */
+@media only screen and (min-width: 920px) {
+  fieldset {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main{
+    max-width: 700px;
+  }
+  button{
+  min-width: 30rem;
+}
+}
 
 /* ///ADD/// x-large styles 1024px */
+@media only screen and (min-width: 1024px){
+  .articlesClass{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+  main{
+  max-width: 1000px;
+}
+}
 
 
-/* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: dark) {
+  body {
+  background-color: var(--truth-text);
+  color: var(--watchdog-white);
+}
+ .articlesClass h3 {
+  border-bottom: 2px solid var(--blue-bulletin);
+  margin: 15px;
+}
+ .articlesClass{
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--blue-bulletin);
+
+}
+
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+  background-color: var(--watchdog-white);
+  color: var(--truth-text);
+}
+}
 
 
-/* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
 @supports (selector(:has(*))) {
 
+  .mobile-nav:has(#menu-toggle:checked) .menu {
+    display: block;
+  }
+
+  .mobile-nav:has(#menu-toggle:checked) .menu-button {
+    background-color: var(--blue-bulletin);
+    color: var(--watchdog-white);
+  }
+
+
+  .mobile-nav:has(#menu-toggle:checked) .menu li:hover {
+    background-color: var(--blue-bulletin); 
+    border: 2px solid var(--news-flash);                  
+    transition: background-color 0.3s ease, border 0.3s ease;
+  }
+
+  /* Optional: Hover effect for links inside menu */
+  .mobile-nav:has(#menu-toggle:checked) .menu li:hover a {
+    color: var(--watchdog-white);
+  }
 }
