@@ -356,7 +356,7 @@ fieldset legend {
 }
 
 
-button {
+form button {
   width: 100%;
   max-width: 20rem;
   background-color: var(--blue-bulletin);
@@ -370,7 +370,7 @@ button {
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
-button:hover {
+form button:hover {
   background-color: var(--watchdog-white);
   color: var(--blue-bulletin);
   border: 1px solid var(--blue-bulletin);
