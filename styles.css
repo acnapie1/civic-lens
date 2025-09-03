@@ -569,7 +569,7 @@ button{
     transition: background-color 0.3s ease, border 0.3s ease;
   }
 
-  /* Optional: Hover effect for links inside menu */
+
   .mobile-nav:has(#menu-toggle:checked) .menu li:hover a {
     color: var(--watchdog-white);
   }
